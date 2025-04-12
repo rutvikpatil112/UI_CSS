@@ -67,40 +67,42 @@ header i:hover {
   text-align: center;
   padding: 50px 20px;
   background-color: #f1faee;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
 }
 
 #about > #prouduct_unique {
   width: 100%;
+  margin-bottom: 40px;
 }
 
 #prouduct_unique h2 {
   font-size: 2rem;
   color: #2d6a4f;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
-#about div {
-  flex: 1 1 150px;
-  max-width: 200px;
-  margin: 0 10px;
+#about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  width: 100%;
 }
 
-#about img {
+#about-grid > div {
+  text-align: center;
+  width: 100%;
+}
+
+#about-grid img {
   width: 80px;
   height: auto;
   margin-bottom: 10px;
 }
 
-#about h3 {
+#about-grid h3 {
   font-size: 1rem;
   color: #1b4332;
   margin-top: 10px;
 }
-
 
 /* Farms Section */
 #farms {
@@ -128,6 +130,7 @@ header i:hover {
   color: #1b4332;
   font-size: 2rem;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 #farms p {
@@ -135,6 +138,7 @@ header i:hover {
   line-height: 1.6;
   margin-bottom: 20px;
   color: #333;
+  text-align: justify;
 }
 
 #farms button {
@@ -150,7 +154,6 @@ header i:hover {
 #farms button:hover {
   background-color: #1b4332;
 }
-
 
 /* Technology Section */
 #technology {
@@ -178,6 +181,7 @@ header i:hover {
   color: #2d6a4f;
   font-size: 2rem;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 #technology h3 {
@@ -191,6 +195,7 @@ header i:hover {
   line-height: 1.6;
   margin: 10px 0 20px;
   color: #333;
+  text-align: justify;
 }
 
 #technology button {
@@ -206,7 +211,6 @@ header i:hover {
 #technology button:hover {
   background-color: #1b4332;
 }
-
 
 /* Pillars Section */
 #pillars {
@@ -234,6 +238,10 @@ header i:hover {
   margin: 10px 0;
 }
 
+.pillar p {
+  font-size: 0.95rem;
+}
+
 /* Footer */
 footer {
   background-color: #2d6a4f;
@@ -242,6 +250,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
+  text-align: center;
 }
 
 footer ul {
@@ -265,15 +274,12 @@ footer i {
 
 footer p {
   grid-column: span 4;
-  text-align: center;
   margin-top: 20px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #d8f3dc;
 }
 
-
-
-/*  Mobile (up to 767px) */
+/* Responsive Breakpoints */
 @media (max-width: 767px) {
   nav {
     flex-direction: column;
@@ -287,39 +293,25 @@ footer p {
     margin-bottom: 10px;
   }
 
-  #about > div {
-    max-width: 120px;
+  #about-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 
   #pillars {
     grid-template-columns: 1fr;
   }
-
-  .media-grid, .product-categories {
-    grid-template-columns: 1fr;
-  }
 }
 
-/*  Tablet (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   header {
     padding: 20px;
   }
 
-  #about > div {
-    max-width: 150px;
-  }
-
-  .media-card img, .product-card img {
-    height: 150px;
-  }
-
-  .media-grid, .product-categories {
+  #about-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Desktop (1025px and above) */
 @media (min-width: 1025px) {
   header {
     padding: 20px 60px;
@@ -329,280 +321,11 @@ footer p {
     justify-content: flex-end;
   }
 
-  #about {
-    justify-content: space-around;
-  }
-
-  #about > div {
-    max-width: 180px;
-  }
-
-  .media-grid, .product-categories {
+  #about-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
   #farms, #technology {
     flex-direction: row;
   }
-}
-
-
-  /* Hero Section */
-  #herosection img {
-    max-height: 400px;
-    object-fit: cover;
-  }
-
-  /* About Section */
-  #about {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    padding: 40px 20px;
-  }
-
-  #about > #prouduct_unique {
-    width: 100%;
-    margin-bottom: 30px;
-  }
-
-  #about div {
-    max-width: 160px;
-  }
-
-  #about img {
-    width: 70px;
-  }
-
-  /* Farms Section */
-  #farms {
-    flex-direction: column;
-    gap: 30px;
-    padding: 40px 30px;
-  }
-
-  #farms h2 {
-    text-align: center;
-    font-size: 1.75rem;
-  }
-
-  #farms p {
-    text-align: justify;
-  }
-
-  /* Technology Section */
-  #technology {
-    flex-direction: column-reverse;
-    gap: 30px;
-    padding: 40px 30px;
-  }
-
-  #technology h2 {
-    text-align: center;
-    font-size: 1.75rem;
-  }
-
-  #technology p {
-    text-align: justify;
-  }
-
-  /* Pillars Section */
-  #pillars {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 40px 20px;
-  }
-
-  .pillar h2 {
-    font-size: 1.1rem;
-  }
-
-  .pillar p {
-    font-size: 0.95rem;
-  }
-
-  /* Footer */
-  footer {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    text-align: center;
-    gap: 20px;
-  }
-
-  footer ul {
-    padding: 0;
-  }
-
-  footer p {
-    grid-column: span 4;
-    margin-top: 20px;
-    font-size: 0.85rem;
-  }
-}
-
-
-
-/* Product Categories */
-.product-intro {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #f1faee;
-}
-
-.product-intro h1 {
-  color: #2d6a4f;
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.product-intro p {
-  font-size: 1rem;
-  color: #333;
-}
-
-.product-categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 40px 20px;
-  background-color: #ffffff;
-}
-
-.product-card {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.product-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.product-card h2 {
-  font-size: 1.2rem;
-  color: #2d6a4f;
-  margin: 10px 0;
-}
-
-/* Media Section */
-.media-intro {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #edf6f9;
-}
-
-.media-intro h1 {
-  font-size: 2rem;
-  color: #1b4332;
-  margin-bottom: 15px;
-}
-
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 40px 20px;
-  background-color: #ffffff;
-}
-
-.media-card {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.media-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.media-card h2 {
-  font-size: 1.2rem;
-  color: #2d6a4f;
-  margin: 10px 0;
-}
-
-.media-card p {
-  font-size: 0.95rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.media-card a {
-  display: inline-block;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #1b4332;
-}
-
-/* About Page Main Section */
-#about-main {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  padding: 60px 30px;
-  background-color: #f1faee;
-}
-
-.about-text {
-  flex: 1 1 400px;
-  max-width: 600px;
-}
-
-.about-text h1 {
-  font-size: 2rem;
-  color: #2d6a4f;
-  margin-bottom: 20px;
-}
-
-.about-text p {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-.about-image {
-  flex: 1 1 300px;
-  max-width: 500px;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Vision Section */
-#vision {
-  padding: 50px 30px;
-  background-color: #edf6f9;
-  text-align: center;
-}
-
-#vision h2 {
-  color: #1b4332;
-  font-size: 1.75rem;
-  margin-bottom: 20px;
-}
-
-#vision p {
-  max-width: 800px;
-  margin: 0 auto;
-  color: #333;
-  font-size: 1rem;
-  line-height: 1.6;
 }
